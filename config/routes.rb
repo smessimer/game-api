@@ -10,6 +10,14 @@ Rails.application.routes.draw do
       sessions: 'sessions',
       registrations: 'registrations'
     }
+
+  resources :users, :only => [:show]
+
+  devise_scope :user do
+    resources :steam_users do
+      resources :steam_profile
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

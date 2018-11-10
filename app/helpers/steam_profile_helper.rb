@@ -1,0 +1,2 @@
+module SteamProfileHelper
+end
