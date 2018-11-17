@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  # game-api:
+  #   image: game/api
+  #   build:
+  #     context: ./..
+  #     dockerfile: docker/Dockerfile
+  #   container_name: game-api
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./..:/game-api
+  #   working_dir: /game-api
+  #   depends_on:
+  #     - db
+  #   entrypoint:
+  #     ["rails s"]
+
+  db:
+    image: postgres:10.3
+    container_name: game-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: seth
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ../db/init.sql:/docker-entrypoint-initdb.d/1-database.sql
