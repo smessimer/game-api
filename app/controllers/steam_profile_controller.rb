@@ -15,7 +15,9 @@ class SteamProfileController < ApplicationController
     res = Net::HTTP.start(url.host, url.port) { |http|
       http.request(req)
     }
-    render json: res.body
+
+    profile = JSON.parse(res.body)['response']['players'][0]
+    render json: profile
   end
 
   def auth_steam_user

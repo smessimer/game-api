@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     resources :steam_users do
-      resources :steam_profile
+      resources :steam_profile, :steam_friends
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
