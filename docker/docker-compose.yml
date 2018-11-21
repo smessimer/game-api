@@ -26,4 +26,4 @@ services:
       POSTGRES_USER: seth
       POSTGRES_PASSWORD: password
     volumes:
-      - ../db/init.sql:/docker-entrypoint-initdb.d/1-database.sql
+      - ./db-data:/var/lib/postgresql/data
