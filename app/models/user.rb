@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
           :jwt_authenticatable,
           :registerable,
         jwt_revocation_strategy: JWTBlacklist
+      
+  has_one :steam_user
+  has_many :relationships
 end

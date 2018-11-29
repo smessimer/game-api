@@ -45,9 +45,15 @@ class SteamFriendsController < ApplicationController
     }
 
     friend_playtime = profile
+    puts 'fp response: ', res.body.inspect
     friend_playtime['playtime'] = JSON.parse(res.body)['response']
+    puts 'friends_playtime: ', friend_playtime
     # Get total playtime of all games over last 2 weeks
-    friend_playtime['total_playtime'] = friend_playtime['playtime']['games'].sum {|game| game['playtime_2weeks']}
+    # This will be blank if user's profile is private
+    puts 'friend_playtime_playtime', friend_playtime['playtime']
+    unless friend_playtime['playtime'].blank? or friend_playtime['playtime']['games'].blank? then
+      friend_playtime['total_playtime'] = friend_playtime['playtime']['games'].sum {|game| game['playtime_2weeks']}
+    end
 
     render json: friend_playtime
   end
