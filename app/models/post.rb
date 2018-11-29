@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-  has_one :post, as: :postable
+  belongs_to :user
 end
