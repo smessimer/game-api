@@ -59,8 +59,6 @@ class SteamFriendsController < ApplicationController
   end
 
   def auth_steam_user
-    puts 'current user id: ', current_user.id
-    puts 'steam user id: ', @steam_user.user_id
     current_user.id == @steam_user.user_id
   end
 end
