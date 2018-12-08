@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :steam_users do
       resources :steam_profile, :steam_friends
     end
-    resources :posts, :only => [:create]
+    resources :posts, :only => [:create, :index]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
