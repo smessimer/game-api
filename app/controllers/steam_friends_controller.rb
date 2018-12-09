@@ -20,6 +20,8 @@ class SteamFriendsController < ApplicationController
   end
 
   def show
+    start = Time.now
+
     @steam_user = SteamUser.find(params[:steam_user_id])
   
     if !auth_steam_user
@@ -55,6 +57,9 @@ class SteamFriendsController < ApplicationController
       friend_playtime['total_playtime'] = friend_playtime['playtime']['games'].sum {|game| game['playtime_2weeks']}
     end
 
+    finish = Time.now
+    diff = finish - start
+    puts '>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< time taken: ', diff
     render json: friend_playtime
   end
 

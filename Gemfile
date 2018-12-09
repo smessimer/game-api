@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+# Model serialization
+gem 'active_model_serializers', '~> 0.10.0'
 # Authentication
 gem 'devise-jwt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   respond_to :json
 
   def create
-    post = Post.create(
+    Post.create(
       caption: params[:caption],
       upvotes: params[:upvotes],
       media_url: params[:media_url],
@@ -14,7 +14,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    render json: Post.where(user_id: user_ids)
+    posts = Post.where(user_id: user_ids)
+    render json: posts
+    # render json: posts.to_json(include: ['user', 'user.steam_user'])
+    # render json: posts, include: 'user,user.steam_user'
   end
 
   private

@@ -30,3 +30,13 @@ SteamUser.create  user_id: 1,
 SteamUser.create  user_id: 2,
                   username: 'MrsMessy',
                   steamid: '76561197961166136'
+
+# Posts
+Post.create caption: 'Just playing some CS:GO',
+            upvotes: 2,
+            user_id: 1
+
+Post.create caption: 'Chicken dinner on PUBG!',
+            upvotes: 10,
+            user_id: 2,
+            media_url: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FDZwZ9FBVAAE_A4N.jpg&imgrefurl=https%3A%2F%2Ftwitter.com%2Fpubgmobile%2Fstatus%2F980782901532004352&docid=0R8dNCIliFVnWM&tbnid=59mq-JdqQsWZjM%3A&vet=10ahUKEwig37XA0pDfAhXKz4MKHaAvBpUQMwhBKAIwAg..i&w=1200&h=675&client=ubuntu&bih=1308&biw=1700&q=chicken%20dinner%20pubg&ved=0ahUKEwig37XA0pDfAhXKz4MKHaAvBpUQMwhBKAIwAg&iact=mrc&uact=8'

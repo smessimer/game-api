@@ -4,8 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
           :jwt_authenticatable,
           :registerable,
-        jwt_revocation_strategy: JWTBlacklist
+          :rememberable,
+          jwt_revocation_strategy: JWTBlacklist
       
   has_one :steam_user
   has_many :relationships
+
+  def remember_me
+    true
+  end
 end
