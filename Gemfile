@@ -30,6 +30,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # CORS
 gem 'rack-cors', :require => 'rack/cors'
 
+# Parallel HTTP requests
+gem 'typhoeus'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
