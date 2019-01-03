@@ -14,10 +14,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    posts = Post.where(user_id: user_ids)
+    posts = Post.where(user_id: user_ids).order(:updated_at).reverse
     render json: posts
-    # render json: posts.to_json(include: ['user', 'user.steam_user'])
-    # render json: posts, include: 'user,user.steam_user'
   end
 
   private
